@@ -10,7 +10,7 @@ describe("Token Contract", function () {
     beforeEach(async function () {
         Token = await ethers.getContractFactory("Token");
         [owner, addr1, addr2, addr3] = await ethers.getSigners();
-        token = await Token.deploy();
+        token = await Token.deploy("https:://test.jp");
 
         //owner
         await token.connect(addr1).mintToken(20, { value: ethers.utils.parseEther("0.2") });
